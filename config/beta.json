@@ -1,4 +1,10 @@
 {
   "name": "application-beta.json",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "sss": {
+    "vvv": {
+      "ddd": 4,
+      "dsd":"23232321111xxx1122222"
+    }
+  }
 }
