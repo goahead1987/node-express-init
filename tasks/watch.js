@@ -13,9 +13,8 @@ module.exports = {
                 'index.js',
                 'app.js',
                 'controllers/',
-                'configs/',
-                'helpers/',
-                'models/'
+                'config/',
+                'helpers/'
             ]
         });
     }

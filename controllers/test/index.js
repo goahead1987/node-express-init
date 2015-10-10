@@ -1,15 +1,19 @@
 'use strict';
 
 var querystring = require('querystring');
+var config = require('config');
 
+
+var env = config.name;
+var reee = config.get('name');
 module.exports = function (router) {
     router.get('/', function (req, res) {
         var qs = querystring.stringify(req.query);
         var data = {
             list: [
-                {name:' guokai', show: true},
-                {name:' benben', show: false},
-                {name:' dierbaby', show: true}
+                {name:env, show: true},
+                {name:reee, show: false},
+                {name:config.get('name'), show: true}
             ],
             blah: [
                 {num: 1},
@@ -23,6 +27,7 @@ module.exports = function (router) {
                 {num: 4}
             ]
         };
+
         res.render('test/index', data);
     });
 };
