@@ -4,7 +4,7 @@ var querystring = require('querystring');
 var config = require('config');
 
 
-var env = config.name;
+var env = config.ver;
 var reee = config.get('name');
 module.exports = function (router) {
     router.get('/', function (req, res) {
@@ -19,7 +19,7 @@ module.exports = function (router) {
                 {num: 1},
                 {num: 2},
                 {num: 3, inner:[
-                    {'time': '15:00'},
+                    {'time': '15ee:00'},
                     {'time': '16:00'},
                     {'time': '17:00'},
                     {'time': '18:00'}
