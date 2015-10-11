@@ -10,7 +10,7 @@ var juicerExpressAdapter = require('juicer-express-adapter');
 var enrouten = require('express-enrouten');
 var configRumtime = require('main-dir/helpers/config-realtime');
 configRumtime.init({
-  readRuntime: false,
+  readRuntime: true,
   filename: 'production'
 });
 /**自定义加载模块***/

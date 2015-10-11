@@ -17,6 +17,10 @@ function getRelativePath (root, leaf) {
     }
     return pathArr.join('/');
 }
+function isObject(obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+}
 
 /*
 * 暴露模块
@@ -81,8 +85,12 @@ function config () {
         }
         var keyArr = key.split('.');
         var obj = configVal;
-        for (var i = 0; i < keyArr.length; i++) {
+        var len = keyArr.length;
+        for (var i = 0; i < len; i++) {
             obj = obj[keyArr[i]];
+            if ((i < len - 1) && !isObject(obj)) {
+                return undefined;
+            }
         }
         return obj;
     }
