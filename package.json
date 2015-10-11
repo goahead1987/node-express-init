@@ -16,7 +16,8 @@
     "juicer-express-adapter": "0.1.5",
     "morgan": "~1.6.1",
     "request": "^2.40.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "del": "^1.1.0",
