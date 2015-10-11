@@ -60,12 +60,22 @@ function config () {
     /*
     * 获取数据，key为undefined，null，‘’时返回所有数据
     * key可以为 'aaa.bbb.ccc' 形式
+    * filepath 为配置文件相对根目录路径，若不填则为环境变量配置相关配置文件
+    * readRuntime 为 是否实时读取配置文件信息，若为undefined，null，‘’则使用config初始化数据opt.readRuntime
     * */
-    this.get = function (key) {
-        if (this.opt.readRuntime && require.cache[this.__params.absoluteFilePath]) {
-            delete require.cache[this.__params.absoluteFilePath];
+    this.get = function (key, filepath, readRuntime) {
+        if (typeof filepath === 'undefined' || filepath === null || filepath === '') {
+            filepath = this.__params.absoluteFilePath;
+        }else{
+            filepath = path.join(rootPath, filepath);
         }
-        var configVal = require(this.__params.absoluteFilePath);
+        if (typeof readRuntime === 'undefined' || readRuntime === null || readRuntime === '') {
+            readRuntime = this.opt.readRuntime;
+        }
+        if (readRuntime && require.cache[filepath]) {
+            delete require.cache[filepath];
+        }
+        var configVal = require(filepath);
         if (typeof key === 'undefined' || key === null || key === '') {
             return configVal;
         }

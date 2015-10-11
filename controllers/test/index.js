@@ -14,6 +14,7 @@ module.exports = function (router) {
         var obj = configRuntime.get();
         var name = configRuntime.get('name');
         var vvv = configRuntime.get('sss.vvv');
+        var ssss = configRuntime.get('', './package.json', true);
         var data = {
             list: [
                 {name:env, show: true},
@@ -31,7 +32,8 @@ module.exports = function (router) {
                 ]},
                 {num: 4}
             ],
-            fff: fff
+            fff: fff,
+            ssss: ssss
         };
 
         res.render('test/index', data);
