@@ -10,7 +10,7 @@ module.exports = function (router) {
     router.get('/', function (req, res) {
         var qs = querystring.stringify(req.query);
         var fff = 11;
-        var configRuntime = require('main-dir/helpers/config-realtime');
+        var configRuntime = require('config-realtime');
         var obj = configRuntime.get();
         var name = configRuntime.get('name');
         var vvv = configRuntime.get('sss.vvv');

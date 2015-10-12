@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 /**自定义加载模块***/
 var juicerExpressAdapter = require('juicer-express-adapter');
 var enrouten = require('express-enrouten');
-var configRumtime = require('main-dir/helpers/config-realtime');
+var configRumtime = require('config-realtime');
 configRumtime.init({
   readRuntime: true,
   filename: 'production'
