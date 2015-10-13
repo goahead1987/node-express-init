@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "mocha": true,
+        "jquery": true,
+        "amd": true,
+        "jasmine": true
+    },
+    "parser": "espree",
+    "globals": {
+        "angular": true
+    },
+    "rules": {
+        "quotes": 0,
+        "eol-last": 0,
+        "no-alert": 0,
+        "no-unused-vars": 0,
+        "new-cap": 0,
+        "camelcase": 0,
+        "comma-dangle": 0,
+        "no-underscore-dangle": 0,
+        "no-shadow": 0,
+        "curly": 0,
+        "no-empty": 0
+    }
+}
