@@ -1,3 +1,6 @@
+/**
+ * 使用eslint检查代码
+ * */
 'use strict';
 
 module.exports = {

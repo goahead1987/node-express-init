@@ -13,9 +13,23 @@ configRumtime.init({
   readRuntime: true,
   filename: 'production'
 });
+var devLog = require('main-dir/helpers/devLog.js');
+var ignoreMd5 = require('main-dir/helpers/ignoreMd5.js');
 /**自定义加载模块***/
 
 var app = express();
+
+/**dev显示请求***/
+if (app.get('env') === 'dev'){
+  app.use(devLog());
+}
+/**dev显示请求***/
+
+/**文件请求忽略md5***/
+if (app.get('env') === 'dev') {
+  app.use(ignoreMd5());
+}
+/**文件请求忽略md5***/
 
 /**自定义动态路由***/
 app.use(enrouten({directory: 'controllers'}));
@@ -23,7 +37,11 @@ app.use(enrouten({directory: 'controllers'}));
 
 // view engine setup
 /**自定义juicer模板***/
-app.set('views', path.join(__dirname, 'templates'));
+if (app.get('env') === 'production') {
+  app.set('views', path.join(__dirname, 'build/templates'));
+}else{
+  app.set('views', path.join(__dirname, 'templates'));
+}
 app.set('view engine', 'html');
 app.engine('html', juicerExpressAdapter);
 /**自定义juicer模板***/
@@ -35,8 +53,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+/**配置静态资源***/
+if (app.get('env') === 'production') {
+  app.use(express.static(path.join(__dirname, 'build/public')));
+}else{
+  app.use(express.static(path.join(__dirname, 'public')));
+}
+/**配置静态资源***/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

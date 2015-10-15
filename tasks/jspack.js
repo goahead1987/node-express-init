@@ -1,13 +1,17 @@
+/**
+ * 打包js文件
+ * */
 'use strict';
 
 var concat = require('gulp-concat');
 
 var PATH = {
-    src: './public/js/**/*.js',
+    src: './build/public/js/**/*.js',
     dst: './build/public/'
 };
 
 module.exports = {
+    deps: ['copyto'],
     task: function jsmin(gulp) {
         return gulp.src(PATH.src)
             .pipe(concat('all.js'))

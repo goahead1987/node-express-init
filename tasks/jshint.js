@@ -1,3 +1,6 @@
+/**
+ * 使用jshint检查代码
+ * */
 'use strict';
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
