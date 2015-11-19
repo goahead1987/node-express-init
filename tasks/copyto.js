@@ -5,10 +5,10 @@
 
 var PATH = {
     src: [
-        './public/favicon.ico',
-        './public/images/**/*'
+        './src/**/*',
+        '!./src/public/js/**/*'
     ],
-    dst: './build/public/'
+    dst: './build'
 };
 
 module.exports = {

@@ -15,12 +15,14 @@ module.exports = {
     plugins: [commonsPlugin],
     //页面入口文件配置
     entry: {
-        group: './public/js/tdc/group/index.js',
-        task: './public/js/tdc/task/index.js'
+        a: './src/public/js/a',
+        d: './src/public/js/d',
+        a1: './src/public/js/page1/a',
+        d1: './src/public/js/page1/d'
     },
     //入口文件输出配置
     output: {
-        path: 'build/public/js/page',
+        path: 'build/public/js',
         filename: '[name].js'
     },
     module: {

@@ -14,3 +14,4 @@ build/
 .sass-cache
 node_modules/*
 !node_modules/main-dir
+src/public/bower_components/*

@@ -19,6 +19,11 @@ var ignoreMd5 = require('main-dir/helpers/ignoreMd5.js');
 
 var app = express();
 
+/****设置环境变量****/
+app.set('port', process.env.PORT || 3000);
+app.set('env', process.env.NODE_ENV || 'production');
+/****设置环境变量****/
+
 /**dev显示请求***/
 if (app.get('env') === 'dev'){
   app.use(devLog());
@@ -31,23 +36,20 @@ if (app.get('env') === 'dev') {
 }
 /**文件请求忽略md5***/
 
-/**自定义动态路由***/
-app.use(enrouten({directory: 'controllers'}));
-/**自定义动态路由***/
 
 // view engine setup
 /**自定义juicer模板***/
 if (app.get('env') === 'production') {
   app.set('views', path.join(__dirname, 'build/templates'));
 }else{
-  app.set('views', path.join(__dirname, 'templates'));
+  app.set('views', path.join(__dirname, 'src/templates'));
 }
 app.set('view engine', 'html');
 app.engine('html', juicerExpressAdapter);
 /**自定义juicer模板***/
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'src/public', 'favicon.ico')));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -58,9 +60,14 @@ app.use(cookieParser());
 if (app.get('env') === 'production') {
   app.use(express.static(path.join(__dirname, 'build/public')));
 }else{
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'src/public')));
 }
 /**配置静态资源***/
+
+/**自定义动态路由***/
+app.use(enrouten({directory: 'controllers'}));
+/**自定义动态路由***/
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

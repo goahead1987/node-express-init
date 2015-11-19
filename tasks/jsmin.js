@@ -4,21 +4,25 @@
 'use strict';
 
 var uglify = require('gulp-uglify');
+var rev = require('gulp-rev');
 
 var PATH = {
     src: [
-        './build/public/**/*.js'
+        './build/public/web-pack-js/**/*.js'
     ],
-    dst: './build/public/'
+    dst: './build/public/js'
 };
 
 module.exports = {
-    deps: ['copyto'],
+    deps: ['webpack'],
     task: function jsmin(gulp) {
         return gulp.src(PATH.src)
             .pipe(uglify({
                 mangle: {except: ['$']}
             }))
-            .pipe(gulp.dest(PATH.dst));
+            .pipe(rev())
+            .pipe(gulp.dest(PATH.dst))
+            .pipe(rev.manifest({merge: true}))
+            .pipe(gulp.dest('build/public/ver'));
     }
 };
