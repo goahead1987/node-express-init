@@ -1,5 +1,5 @@
 /**
- *
+ * 使用webpack打包
  * */
 'use strict';
 var webpack = require('webpack');
@@ -12,7 +12,7 @@ config.output.path = '/'; // gulp报错
 var entry = config.entry;
 module.exports = {
     deps: ['del'],
-    task: function(gulp) {
+    task: function (gulp) {
         var basePath = './src/public/js';
         return gulp.src(basePath + '/**/*.js')
             .pipe(gulpWebpack(config))
@@ -24,7 +24,6 @@ module.exports = {
                     path.dirname = pathArr.join('/');
                     path.basename = basename;
                 }
-
             }))
             .pipe(gulp.dest('build/public/web-pack-js'));
     }

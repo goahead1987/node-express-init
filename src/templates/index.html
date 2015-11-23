@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
-    <meta charset="UTF-8">
     <title>首页</title>
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-title" content="首页">
+    <!-- 页面描述 -->
+    <meta name="description" content="不超过150个字符"/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content=""/>
+    {# 引入h5头部项}
+    {@include file://./common/head-item.html, _}
 </head>
 <body>
     我是首页
-<!--<script type="text/javascript" src="/bower_components/requirejs/require.js"></script>-->
-<script type="text/javascript" src="/js/common.js"></script>
-<!--<script type="text/javascript" src="/js/a.js"></script>-->
-<!--<script type="text/javascript" src="/js/d.js"></script>-->
-<script type="text/javascript" src="/js/a1.js"></script>
-<script type="text/javascript" src="/js/d1.js"></script>
-<script type="text/javascript">
+    <div id="example"></div>
 
-</script>
+<script type="text/javascript" src="/bower_components/react/react.min.js"></script>
+<script type="text/javascript" src="/bower_components/react/react-dom.min.js"></script>
+<script type="text/javascript" src="/js/index/index.js"></script>
+
 </body>
 </html>

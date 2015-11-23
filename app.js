@@ -11,17 +11,19 @@ var enrouten = require('express-enrouten');
 var configRumtime = require('config-realtime');
 configRumtime.init({
   readRuntime: true,
-  filename: 'production'
+  filename: 'dev'
 });
 var devLog = require('main-dir/helpers/devLog.js');
 var ignoreMd5 = require('main-dir/helpers/ignoreMd5.js');
+var preJsTpl = require('main-dir/helpers/preJsTpl.js');
+var browserify = require('browserify-middleware');
 /**自定义加载模块***/
 
 var app = express();
 
 /****设置环境变量****/
 app.set('port', process.env.PORT || 3000);
-app.set('env', process.env.NODE_ENV || 'production');
+app.set('env', process.env.NODE_ENV || 'dev');
 /****设置环境变量****/
 
 /**dev显示请求***/
@@ -31,15 +33,20 @@ if (app.get('env') === 'dev'){
 /**dev显示请求***/
 
 /**文件请求忽略md5***/
-if (app.get('env') === 'dev') {
-  app.use(ignoreMd5());
-}
+//if (app.get('env') === 'dev') {
+//  app.use(ignoreMd5());
+//}
 /**文件请求忽略md5***/
 
+/***js****/
+if (app.get('env') === 'dev') {
+  app.get('/js/*', preJsTpl);
+}
+/***js****/
 
 // view engine setup
 /**自定义juicer模板***/
-if (app.get('env') === 'production') {
+if (app.get('env') !== 'dev') {
   app.set('views', path.join(__dirname, 'build/templates'));
 }else{
   app.set('views', path.join(__dirname, 'src/templates'));
@@ -57,7 +64,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 /**配置静态资源***/
-if (app.get('env') === 'production') {
+if (app.get('env') !== 'dev') {
   app.use(express.static(path.join(__dirname, 'build/public')));
 }else{
   app.use(express.static(path.join(__dirname, 'src/public')));
@@ -80,7 +87,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (app.get('env') === 'dev') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
