@@ -15,7 +15,7 @@ module.exports = {
             .pipe(eslint({
                 useEslintrc: false,
                 //rules: {},
-                configFile: "./config/eslint.json"
+                configFile: "./config/taskconfig/eslint.json"
             }))
             .pipe(eslint.format())
             .pipe(eslint.failOnError());

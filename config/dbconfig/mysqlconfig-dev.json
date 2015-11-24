@@ -1,0 +1,10 @@
+{
+  "dbname": "initdb",
+  "option": {
+    "host": "localhost",
+    "dbport": "3306",
+    "dialect": "mysql"
+  },
+  "uname": "root",
+  "upass": 870125
+}

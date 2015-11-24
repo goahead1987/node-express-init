@@ -16,7 +16,9 @@
     "juicer": "^0.6.9-stable",
     "juicer-express-adapter": "0.1.5",
     "morgan": "~1.6.1",
+    "mysql": "^2.9.0",
     "request": "^2.40.0",
+    "sequelize": "^3.14.1",
     "serve-favicon": "~2.3.0",
     "underscore": "^1.8.3"
   },

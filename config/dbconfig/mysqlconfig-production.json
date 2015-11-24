@@ -1,0 +1,7 @@
+{
+  "dbname": "initdb",
+  "dbhost": "localhost",
+  "dbport": "3306",
+  "uname": "root",
+  "upass": 870125
+}

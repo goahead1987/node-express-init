@@ -7,7 +7,7 @@ var stylish = require('jshint-stylish');
 var configRuntime = require('config-realtime');
 
 var jshintOpt = {};
-jshintOpt =  configRuntime.get('', 'config/jshint.json', false);
+jshintOpt =  configRuntime.get('', 'config/taskconfig/jshint.json', false);
 
 module.exports = {
     task: function(gulp) {
