@@ -3,17 +3,19 @@
  */
 
 
-var requireDir = require('require-dir');
-var Models = requireDir('../models');
+var Models = require('main-dir/models/Models');
 var User = Models.User;
-//var User = require('main-dir/models/User');
+
 var Users = function () {
 };
 Users.prototype = {
     getById: function (id) {
         return User.findById(id)
             .then(function (user) {
-                return user.dataValues;
+                if (user) {
+                    return user.dataValues;
+                }
+                return null;
             });
     }
 };

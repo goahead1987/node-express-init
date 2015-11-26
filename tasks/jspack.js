@@ -12,7 +12,7 @@ var PATH = {
 
 module.exports = {
     deps: ['copyto'],
-    task: function jsmin(gulp) {
+    task: function (gulp) {
         return gulp.src(PATH.src)
             .pipe(concat('all.js'))
             .pipe(gulp.dest(PATH.dst));

@@ -15,7 +15,7 @@ var PATH = {
 
 module.exports = {
     deps: ['webpack'],
-    task: function jsmin(gulp) {
+    task: function (gulp) {
         return gulp.src(PATH.src)
             .pipe(uglify({
                 mangle: {except: ['$']}

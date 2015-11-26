@@ -13,7 +13,7 @@ var PATH = {
 
 module.exports = {
     deps: ['del'],
-    task: function copyto(gulp) {
+    task: function (gulp) {
         return gulp.src(PATH.src)
             .pipe(gulp.dest(PATH.dst));
     }
