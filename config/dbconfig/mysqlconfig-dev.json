@@ -3,7 +3,10 @@
   "option": {
     "host": "localhost",
     "dbport": "3306",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": {
+      "underscored": true
+    }
   },
   "uname": "root",
   "upass": "870125"
