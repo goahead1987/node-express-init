@@ -2,26 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试juicer,config</title>
+    <title>测试</title>
 </head>
 <body>
-<ul>
-    {@each list as it,index}
-    <li>${it.name} (index: ${index})</li>
-    {@/each}
-    {@each blah as it}
-    <li>
-        num: ${it.num} <br />
-        {@if it.num==3}
-        {@each it.inner as it2}
-        ${it2.time} <br />
-        {@/each}
-        {@/if}
-    </li>
-    {@/each}
-    {@each ssss as it,index}
-    <li>(index: ${index})</li>
-    {@/each}
-</ul>
+<script type="text/javascript" src="/js/test/a.js"></script>
+<script type="text/javascript" src="/js/test/d.js"></script>
 </body>
 </html>

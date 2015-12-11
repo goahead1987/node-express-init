@@ -14,7 +14,7 @@ var PATH = {
 };
 
 module.exports = {
-    deps: ['jsmin'],
+    deps: ['copyto', 'jsmin'],
     task: function (gulp) {
         var manifest = gulp.src("./build/public/ver/rev-manifest.json");
         //console.log(manifest);

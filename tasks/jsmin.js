@@ -22,7 +22,7 @@ module.exports = {
             }))
             .pipe(rev())
             .pipe(gulp.dest(PATH.dst))
-            .pipe(rev.manifest({merge: true}))
+            .pipe(rev.manifest({merge: false}))
             .pipe(gulp.dest('build/public/ver'));
     }
 };
