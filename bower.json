@@ -24,6 +24,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "requirejs": "~2.1.21",
-    "react": "~0.14.3"
+    "react": "~0.14.3",
+    "bootstrap": "~3.3.6",
+    "frozenui": "~1.3.0"
   }
 }

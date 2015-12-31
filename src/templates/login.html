@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <title>登陆</title>
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-title" content="登陆">
+    <!-- 页面描述 不超过150个字符 -->
+    <meta name="description" content=""/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content=""/>
+    {# 引入h5头部项}
+    {@include file://./common/head-item.html, _}
+    <link rel="stylesheet" href="/bower_components/frozenui/dist/css/frozen.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+    <div id="reactContainer"></div>
+
+    <script type="text/javascript" src="/bower_components/react/react.min.js"></script>
+    <script type="text/javascript" src="/bower_components/react/react-dom.min.js"></script>
+    <script type="text/javascript" src="/js/login/index.js"></script>
+</body>
+</html>
