@@ -4,3 +4,23 @@ html,body{
 body{
     background-color: #f0efed;
 }
+
+.ui-form-item .ui-icon-checked-s,.ui-form-item .ui-icon-warn-block {
+     position: absolute;
+     top: 0;
+     right: 6px;
+ }
+.ui-form-item-r .ui-icon-checked-s, .ui-form-item-r .ui-icon-warn-block{
+    right: 125px;
+}
+.ui-form-item .ui-icon-checked-s,.ui-form-item-r .ui-icon-checked-s {
+    color: green;
+}
+.ui-form-item .ui-icon-warn-block, .ui-form-item-r .ui-icon-warn-block{
+    color: red;
+}
+.ui-form .ui-form-valid-tip{
+    background-color: lightyellow;
+    padding: 0 15px;
+    color: red;
+}

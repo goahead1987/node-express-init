@@ -17,6 +17,8 @@ var devLog = require('main-dir/helpers/devLog.js');
 var ignoreMd5 = require('main-dir/helpers/ignoreMd5.js');
 var preJsTpl = require('main-dir/helpers/preJsTpl.js');
 var browserify = require('browserify-middleware');
+
+var useSession = require('main-dir/helpers/useSession.js');
 /**自定义加载模块***/
 
 var app = express();
@@ -62,6 +64,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/**配置session***/
+useSession(app);
+/**配置session***/
 
 /**配置静态资源***/
 if (app.get('env') !== 'dev') {

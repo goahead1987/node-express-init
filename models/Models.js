@@ -36,12 +36,12 @@ var User = Models.User = connectDB.define('user', {
     },
     tel: {
         type: Seq.STRING(16),
-        //allowNull: false,
-        //unique: true,
+        unique: true,
         comment: "手机号"
     },
     email: {
         type: Seq.STRING(64),
+        unique: true,
         comment: "邮箱"
     }
 });

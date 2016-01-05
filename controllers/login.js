@@ -16,4 +16,19 @@ module.exports = function (router) {
         //        });
         //    });
     });
+
+    router.post('/in', function (req, res) {
+        var data = req.body;
+        var code = req.session.imgcode;
+        console.log(code);
+        if (code.toLocaleLowerCase() === data.imgcode.toLocaleLowerCase()) {
+            res.send({
+                a:code
+            });
+        }else{
+            res.send({
+                a:code
+            });
+        }
+    });
 };
