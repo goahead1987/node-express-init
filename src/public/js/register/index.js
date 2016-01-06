@@ -91,7 +91,7 @@ var Page = React.createClass({
                         <InputValid valid={this.state.nameV} validTips="feifa" ref="name" input={this.inputName} type="text" placeholder="帐号" />
                         <InputValid valid={this.state.pass1V} validTips="feifa" ref="pass1" input={this.disabledBtn} type="password" placeholder="请输入密码"/>
                         <InputValid valid={this.state.pass2V} validTips="feifa" ref="pass2" input={this.disabledBtn} type="password" placeholder="请再次输入密码"/>
-                        <InputValidImgCode valid={this.state.imgcodeV} validTips="feifa" ref="imgcode" input={this.disabledBtn} type="text" placeholder="验证码"/>
+                        <InputValidImgCode valid={this.state.imgcodeV} ref="imgcode" input={this.disabledBtn} type="text" placeholder="验证码"/>
                     </div>
                     <BtnBig disabled={this.state.disabled} click={this.login} txt="注册" className="ui-btn-lg ui-btn-primary"/>
                     <div className="ui-row-flex ui-whitespace">

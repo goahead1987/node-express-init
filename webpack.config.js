@@ -15,7 +15,8 @@ module.exports = {
     //plugins: [commonsPlugin],
     //页面入口文件配置
     entry: {
-        index: './src/public/js/index/index'
+        login: './src/public/js/login/index',
+        register: './src/public/js/register/index'
     },
     //入口文件输出配置
     output: {
