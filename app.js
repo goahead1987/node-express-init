@@ -16,7 +16,7 @@ configRumtime.init({
 var devLog = require('main-dir/helpers/devLog.js');
 var ignoreMd5 = require('main-dir/helpers/ignoreMd5.js');
 var preJsTpl = require('main-dir/helpers/preJsTpl.js');
-var browserify = require('browserify-middleware');
+var redirectJs = require('main-dir/helpers/redirectJs.js');
 
 var useSession = require('main-dir/helpers/useSession.js');
 /**自定义加载模块***/
@@ -42,7 +42,8 @@ if (app.get('env') === 'dev'){
 
 /***js****/
 if (app.get('env') === 'dev') {
-  app.get('/js/*', preJsTpl);
+  //app.get('/js/*', preJsTpl);
+  app.get('/js/*', redirectJs);
 }
 /***js****/
 

@@ -16,7 +16,8 @@ module.exports = {
     //页面入口文件配置
     entry: {
         login: './src/public/js/login/index',
-        register: './src/public/js/register/index'
+        register: './src/public/js/register/index',
+        index: './src/public/js/index/index'
     },
     //入口文件输出配置
     output: {
@@ -29,11 +30,21 @@ module.exports = {
             //.css 文件使用 style-loader 和 css-loader 来处理
             //{ test: /\.css$/, loader: 'style-loader!css-loader' },
             //.js 文件使用 jsx-loader 来编译处理
-            { test: /\.js$/, loader: 'jsx-loader?harmony' }
+            //{ test: /\.js$/, loader: 'jsx-loader?harmony' }
             //.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
             //{ test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
             //{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel',
+                query: {
+                    cacheDirectory: true,
+                    presets: ['react', 'es2015'],
+                    plugins: ['transform-runtime']
+                }
+            }
         ]
     },
     //其它解决方案配置

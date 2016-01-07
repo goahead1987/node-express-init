@@ -9,7 +9,9 @@ var url = require('url');
 /***browserify***/
 //var browserify = require('browserify-middleware');
 //var reactify = require('reactify');
-//browserify.settings('transform', ['reactify']);//, {"es6": true}
+//browserify.settings({
+//    'transform': reactify
+//});//, {"es6": true}
 //
 //module.exports = function(req, res, next) {
 //    var pathStr = 'src/public' + req._parsedUrl.path;

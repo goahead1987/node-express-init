@@ -5,7 +5,8 @@
         "mocha": true,
         "jquery": true,
         "amd": true,
-        "jasmine": true
+        "jasmine": true,
+        "es6": true
     },
     "parser": "espree",
     "globals": {

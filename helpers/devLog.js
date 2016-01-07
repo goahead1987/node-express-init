@@ -3,10 +3,11 @@
  * 输出请求信息
  */
 'use strict';
+var gutil = require('gulp-util');
 
 module.exports =  function() {
     return function(req, res, next) {
-        console.log('--dev--:  %s %s', req.method, req.url);
+        gutil.log(gutil.colors.magenta('--dev--: ', req.method, req.url));
         return next();
     };
 };

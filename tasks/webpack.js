@@ -7,12 +7,13 @@ var gulpWebpack = require('gulp-webpack');
 var gutil = require("gulp-util");
 var rename = require("gulp-rename");
 var configRuntime = require('config-realtime');
-var config = configRuntime.get('', './webpack.config.js', false);
-config.output.path = '/'; // gulp报错
-var entry = config.entry;
+
 module.exports = {
-    deps: ['del'],
+    deps: ['delWebpackjs'],
     task: function (gulp) {
+        var config = configRuntime.get('', './webpack.config.js', true);
+        config.output.path = '/'; // gulp报错
+        var entry = config.entry;
         var basePath = './src/public/js';
         return gulp.src(basePath + '/**/*.js')
             .pipe(gulpWebpack(config))
