@@ -48,10 +48,10 @@ module.exports = {
                 }
             },
 
-            { test: /\.(css|less)$/, loader: 'style-loader!css-loader?localIdentName=[hash:base64:8]!less-loader' },
-            { test: /\.(ttf|eot|woff|woff2|otf|svg)/, loader: 'file-loader?name=./font/[name].[ext]' },
-            { test: /\.json$/, loader: 'file-loader?name=./json/[name].json' },
-            { test: /\.(png|jpg|jpeg|gif)$/, loader: 'url-loader?limit=10000&name=./images/[name].[ext]' }
+            //{ test: /\.(css|less)$/, loader: 'style-loader!css-loader?localIdentName=[hash:base64:8]!less-loader' },
+            //{ test: /\.(ttf|eot|woff|woff2|otf|svg)/, loader: 'file-loader?name=./font/[name].[ext]' },
+            //{ test: /\.json$/, loader: 'file-loader?name=./json/[name].json' },
+            //{ test: /\.(png|jpg|jpeg|gif)$/, loader: 'url-loader?limit=10000&name=./images/[name].[ext]' }
         ]
     },
     //其它解决方案配置

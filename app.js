@@ -43,7 +43,7 @@ if (app.get('env') === 'dev'){
 /***js****/
 if (app.get('env') === 'dev') {
   //app.get('/js/*', preJsTpl);
-  app.get('/js/*', redirectJs);
+  app.get('/js/*', redirectJs());
 }
 /***js****/
 

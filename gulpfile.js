@@ -15,5 +15,5 @@ for (var task in tasks) {
 }
 
 gulp.task('default', function () {
-    gulp.run('eslint', 'del', 'copyto', 'entries', 'webpack', 'jsmin', 'htmlrev');
+    gulp.run('eslint', 'del', 'copyto', 'entries', 'csspackmin', 'webpack', 'jspack', 'jsmin', 'htmlrev');
 });

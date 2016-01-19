@@ -5,7 +5,6 @@
 var del = require('del');
 
 module.exports = {
-    deps: ['eslint'],
     task: function(gulp) {
         del.sync('build');
     }

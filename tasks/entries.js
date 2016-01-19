@@ -17,11 +17,13 @@ module.exports = {
     task: function (gulp) {
 
         return gulp.src(PATH.src)
-            .pipe(search(/\$\{jscssDomain\}\/js\/.*\/.*\.js/g, function (item) {
+            .pipe(search(/\$\{jscssDomain\}\/js(\/.*)*\/.*\.js/g, function (item) {
                 var obj = {},
-                    key = item.replace('${jscssDomain}/js/', '').replace('.js', ''),
-                    value = item.replace('${jscssDomain}/js/', './src/public/js/');
-                obj[key] = value;
+                    key = item.replace(/\$\{jscssDomain\}\/js\//, '').replace(/\.js/, ''),
+                    value = item.replace(/\$\{jscssDomain\}\/js\//, './src/public/js/');
+                if (key !== 'lib-modules') {
+                    obj[key] = value;
+                }
                 return obj;
             }, {
                 path: PATH.dst

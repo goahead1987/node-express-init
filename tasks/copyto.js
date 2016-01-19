@@ -7,6 +7,7 @@ var PATH = {
     src: [
         './src/**/*',
         '!./src/public/js/**/*',
+        '!./src/public/css/**/*.css',
         '!./src/public/web-pack-js'
     ],
     dst: './build'

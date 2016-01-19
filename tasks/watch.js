@@ -84,7 +84,7 @@ module.exports = {
 
             //webpackRealTime('webpack');
             WatchFiles(['./src/public/js/**/*.js', 'webpack.config.js'], 'webpack');
-            WatchFiles(['src/templates/**/*']);
+            WatchFiles(['src/templates/**/*', './src/public/css/**/*']);
 
             //ReFreshBrowser(['build/public/web-pack-js/**']);
 
@@ -95,7 +95,7 @@ module.exports = {
 
             //webpackRealTime('default');
             WatchFiles(['./src/public/js/**/*.js', 'webpack.config.js'], 'default');
-            WatchFiles(['src/templates/**/*'], 'htmlrev');
+            WatchFiles(['src/templates/**/*', './src/public/css/**/*'], 'htmlrev');
 
             //ReFreshBrowser(['build/public/js/**']);
 
@@ -103,7 +103,7 @@ module.exports = {
         }
 
         if (NODE_ENV === 'dev') {
-            gulp.run('webpack', DevFresh);
+            gulp.run('csspackmin', 'webpack', 'jspack', DevFresh);
         }else{
             gulp.run('default', NonDevFresh);
         }

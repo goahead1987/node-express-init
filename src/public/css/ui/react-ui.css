@@ -1,0 +1,16 @@
+.imgcode-box{
+    border-left: 1px solid #ddd;
+    padding-left: .9375rem;
+}
+.ui-btn-lg {
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.ui-pd-box {
+    display: block;
+    padding: .9375rem;
+}
+.tx-al-rt{
+    text-align: right;
+}
