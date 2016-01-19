@@ -15,9 +15,6 @@ module.exports = {
     //plugins: [commonsPlugin],
     //页面入口文件配置
     entry: {
-        login: './src/public/js/login/index',
-        register: './src/public/js/register/index',
-        index: './src/public/js/index/index'
     },
     //入口文件输出配置
     output: {
@@ -35,16 +32,26 @@ module.exports = {
             //{ test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
             //{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel',
                 query: {
                     cacheDirectory: true,
-                    presets: ['react', 'es2015'],
-                    plugins: ['transform-runtime']
+                    presets: [
+                        'react',
+                        //'stage-3',
+                        'es2015'
+                    ],
+                    //plugins: ['transform-runtime']
                 }
-            }
+            },
+
+            { test: /\.(css|less)$/, loader: 'style-loader!css-loader?localIdentName=[hash:base64:8]!less-loader' },
+            { test: /\.(ttf|eot|woff|woff2|otf|svg)/, loader: 'file-loader?name=./font/[name].[ext]' },
+            { test: /\.json$/, loader: 'file-loader?name=./json/[name].json' },
+            { test: /\.(png|jpg|jpeg|gif)$/, loader: 'url-loader?limit=10000&name=./images/[name].[ext]' }
         ]
     },
     //其它解决方案配置
@@ -58,9 +65,16 @@ module.exports = {
         }
     },
     externals: {
-        // require("jquery") 是引用自外部模块的
+        // require("jquery") 是引用自外部模块的，直接在页面上引入
         // 对应全局变量 jQuery
         "jquery": "jQuery",
+        "react": "React",
+        "react-dom": "ReactDOM",
+        "redux": "Redux",
+        "react-redux": "ReactRedux",
+        "redux-logger": "reduxLogger",
+        "amazeui-react": "AMUIReact",
+        "amazeui-touch": "AMUITouch",
         "angular": "angular"
     }
 };

@@ -6,7 +6,6 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div className="ui-placehold-img">
-
             </div>
         );
     }

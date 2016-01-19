@@ -5,22 +5,22 @@ body{
     background-color: #f0efed;
 }
 
-.ui-form-item .ui-icon-checked-s,.ui-form-item .ui-icon-warn-block {
-     position: absolute;
-     top: 0;
-     right: 6px;
- }
-.ui-form-item-r .ui-icon-checked-s, .ui-form-item-r .ui-icon-warn-block{
-    right: 125px;
+.react-box{
+    height: 100%;
 }
-.ui-form-item .ui-icon-checked-s,.ui-form-item-r .ui-icon-checked-s {
-    color: green;
+.imgcode-box{
+    border-left: 1px solid #ddd;
+    padding-left: .9375rem;
 }
-.ui-form-item .ui-icon-warn-block, .ui-form-item-r .ui-icon-warn-block{
-    color: red;
+.ui-btn-lg {
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: bold;
 }
-.ui-form .ui-form-valid-tip{
-    background-color: lightyellow;
-    padding: 0 15px;
-    color: red;
+.ui-pd-box {
+    display: block;
+    padding: .9375rem;
+}
+.tx-al-rt{
+    text-align: right;
 }

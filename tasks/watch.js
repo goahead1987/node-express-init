@@ -63,9 +63,28 @@ module.exports = {
             });
         }
 
+        function WatchFiles(filesList, taskName) {
+            // 监控到filesList文件变化，刷新浏览器
+            watch(filesList, function (file) {
+                gutil.log(gutil.colors.green('livereload: 文件变化刷新页面................'));
+                if (taskName) {
+                    gulp.run(taskName, function () {
+                        gutil.log(gutil.colors.green(taskName + ': task完成.........'));
+                        gutil.log(gutil.colors.green('livereload: 刷新页面.........'));
+                        livereload.changed(file);
+                    });
+                }else{
+                    gutil.log(gutil.colors.green('livereload: 刷新页面.........'));
+                    livereload.changed(file);
+                }
+            });
+        }
+
         function DevFresh() {
 
-            webpackRealTime('webpack');
+            //webpackRealTime('webpack');
+            WatchFiles(['./src/public/js/**/*.js', 'webpack.config.js'], 'webpack');
+            WatchFiles(['src/templates/**/*']);
 
             //ReFreshBrowser(['build/public/web-pack-js/**']);
 
@@ -74,7 +93,9 @@ module.exports = {
 
         function NonDevFresh() {
 
-            webpackRealTime('default');
+            //webpackRealTime('default');
+            WatchFiles(['./src/public/js/**/*.js', 'webpack.config.js'], 'default');
+            WatchFiles(['src/templates/**/*'], 'htmlrev');
 
             //ReFreshBrowser(['build/public/js/**']);
 

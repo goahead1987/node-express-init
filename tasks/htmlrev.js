@@ -5,10 +5,11 @@
 
 var revReplace = require('gulp-rev-replace');
 var processhtml = require('gulp-processhtml');
+var replace = require('gulp-replace');
 
 var PATH = {
     src: [
-        './build/templates/**/*.html'
+        './src/templates/**/*.html'
     ],
     dst: './build/templates'
 };
@@ -21,6 +22,7 @@ module.exports = {
         return gulp.src(PATH.src)
             .pipe(revReplace({manifest: manifest}))
             .pipe(processhtml({}))
+            .pipe(replace(/\$\{jscssDomain\}/g, 'http://jscss.com'))
             .pipe(gulp.dest(PATH.dst));
     }
 };

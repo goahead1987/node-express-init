@@ -18,7 +18,8 @@
  * 参数错误
  * 1002
  * 验证码错误
-
+ * 1003
+ * 用户名或密码错误
  *
  *
  *
@@ -72,14 +73,39 @@ module.exports = {
         msg: '验证码错误',
         data: null
     },
+    NamePassErr: {
+        status: 1003,
+        msg: '用户名或密码错误',
+        data: null
+    },
 
 
     /*
     * 数据库错误
     * */
+    DbLinkErr: {
+        status: 2999,
+        msg: '数据库链接失败',
+        data: null
+    },
     DbCreateErr: {
         status: 2001,
         msg: '插入数据失败',
+        data: null
+    },
+    DbDeleteErr: {
+        status: 2002,
+        msg: '删除数据失败',
+        data: null
+    },
+    DbUpdateErr: {
+        status: 2003,
+        msg: '修改失败',
+        data: null
+    },
+    DbSelectErr: {
+        status: 2004,
+        msg: '查询失败',
         data: null
     }
 };

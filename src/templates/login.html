@@ -10,15 +10,20 @@
     <meta name="keywords" content=""/>
     {# 引入h5头部项}
     {@include file://./common/head-item.html, _}
-    <link rel="stylesheet" href="/bower_components/frozenui/dist/css/frozen.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="${jscssDomain}/node_modules/amazeui-touch/dist/amazeui.touch.min.css">
+    <link rel="stylesheet" href="${jscssDomain}/css/common.css">
+    <link rel="stylesheet" href="${jscssDomain}/css/font/loveicon/loveicon.css">
+    <script type="text/javascript" src="${jscssDomain}/node_modules/react/dist/react.min.js"></script>
+    <script type="text/javascript" src="${jscssDomain}/node_modules/react-dom/dist/react-dom.min.js"></script>
+    <script type="text/javascript" src="${jscssDomain}/node_modules/amazeui-touch/dist/amazeui.touch.min.js"></script>
+    <script type="text/javascript" src="${jscssDomain}/node_modules/redux/dist/redux.min.js"></script>
+    <script type="text/javascript" src="${jscssDomain}/node_modules/react-redux/dist/react-redux.min.js"></script>
+    <script type="text/javascript" src="${jscssDomain}/node_modules/redux-logger/dist/index.min.js"></script>
 </head>
 <body>
-    <div id="reactContainer"></div>
+<div class="react-box" id="reactContainer"></div>
 
-    <script type="text/javascript" src="/bower_components/react/react.min.js"></script>
-    <script type="text/javascript" src="/bower_components/react/react-dom.min.js"></script>
-    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/login/index.js"></script>
+<script type="text/javascript" src="${jscssDomain}/node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="${jscssDomain}/js/login/index.js"></script>
 </body>
 </html>

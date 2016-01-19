@@ -1,0 +1,28 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "private": true,
+  "description": "bower中没有提供的库",
+  "scripts": {},
+  "dependencies": {
+    "amazeui": "^2.5.0",
+    "amazeui-react": "^1.0.0-beta2",
+    "amazeui-touch": "0.1.0-beta2",
+    "antd": "^0.11.2",
+    "babel-polyfill": "^6.3.14",
+    "bootstrap": "^3.3.6",
+    "es5-shim": "^4.4.1",
+    "es6-promise": "^3.0.2",
+    "frozenui": "^1.3.0",
+    "isomorphic-fetch": "^2.2.0",
+    "jquery": "^2.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
+    "redux-logger": "^2.3.2",
+    "redux-thunk": "^1.0.3",
+    "requirejs": "^2.1.22",
+    "zepto": "^1.0.1"
+  }
+}

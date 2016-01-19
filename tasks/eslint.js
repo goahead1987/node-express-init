@@ -8,7 +8,9 @@ module.exports = {
         var eslint = require('gulp-eslint');
 
         var src = [
-            'src/public/js/**/*.js'
+            'src/public/js/**/*.js',
+            '!node_modules/**',
+            '!**/node_modules/**'
         ];
 
         return gulp.src(src)

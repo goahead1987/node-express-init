@@ -15,3 +15,5 @@ build/
 node_modules/*
 !node_modules/main-dir
 src/public/bower_components/*
+src/public/node_modules/*
+npm-debug.log
